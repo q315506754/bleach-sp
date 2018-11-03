@@ -1,0 +1,68 @@
+<import src="../../../common/head.wxml" />
+<import src="../../../common/foot.wxml" />
+
+<view class="container">
+  <template is="head" data="{{title: 'UR招募魂玉计算'}}"/>
+  <view class="page-body">
+
+    <!-- <view class="page-section page-section-gap">
+        <view class="page-section-title"></view>
+      
+        <label>设置step</label>
+        <slider value="5" bindchange="slider2change" step="1" show-value min='0' max='10'/>
+    
+    </view> -->
+
+    <view class="horizenview">
+      <label>单次消耗</label>
+      <input value='{{eachPrice}}' type='number' class="weui-input" maxlength='5' />
+      <label>魂玉</label>
+    </view>
+    <view class="horizenview">
+      <label>碎片数估计</label>
+      <input value='{{fragNum}}' bindinput='bindKeyInput' data-name='fragNum' type='number' style='' maxlength='5' />
+      <label>片/100次</label>
+    </view>
+
+    <view class="btn-area">
+        <button type="primary" bindtap='calc'>计算</button>
+    </view>
+
+
+<view wx:if="{{listData.length > 0}}" class="table" style='margin-top:50rpx;'>
+  <view class="tr bg-w">
+    <view class="th">事件</view>
+    <view class="th">碎片数</view>
+    <view class="th ">招募次数</view>
+    <view class="th ">消耗魂玉</view>
+  </view>
+  <block wx:for="{{listData}}" wx:key="{{code}}">
+    <view class="tr bg-g" wx:if="{{index % 2 == 0}}">
+      <view class="td">{{item.event}}</view>
+      <view class="td">{{item.frag}}</view>
+      <view class="td">{{item.times}}</view>
+      <view class="td">{{item.cost}}</view>
+    </view>
+    <view class="tr" wx:else>
+      <view class="td">{{item.event}}</view>
+      <view class="td">{{item.frag}}</view>
+      <view class="td">{{item.times}}</view>
+      <view class="td">{{item.cost}}</view>
+    </view>
+  </block>
+</view>
+
+
+  </view>
+
+
+<!-- <scroll-view scroll-y="true" style="height: 300rpx;" bindscrolltoupper="upper" bindscrolltolower="lower" bindscroll="scroll" scroll-into-view="{{toView}}" scroll-top="{{scrollTop}}">
+          <view id="demo1" class="scroll-view-item demo-text-1"></view>
+          <view id="demo2"  class="scroll-view-item demo-text-2"></view>
+          <view id="demo3" class="scroll-view-item demo-text-3"></view>
+        </scroll-view> -->
+
+  
+  
+  <template is="foot" />
+</view>

@@ -1,0 +1,16 @@
+{
+  "pages":[
+    "pages/tools/index"
+    ,"pages/mine/index"
+
+
+    ,"pages/tools/pages/enroll/index"
+,"pages/tools/pages/cost/index"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "境界激斗小工具",
+    "navigationBarTextStyle":"black"
+  }
+}
